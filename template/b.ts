@@ -4,4 +4,8 @@ const input = await Deno.readTextFile(
   p.fromFileUrl(import.meta.resolve("./input.txt"))
 );
 
+// const input = await Deno.readTextFile(
+//   p.fromFileUrl(import.meta.resolve("./test_input.txt"))
+// );
+
 console.log(input);
