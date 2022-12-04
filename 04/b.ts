@@ -8,13 +8,15 @@ const input = await Deno.readTextFile(
 //   p.fromFileUrl(import.meta.resolve("./test_input.txt"))
 // );
 
-const pairs = input.split("\n").map((line) => line.split(","));
-
+const lines = input.split("\n");
 let overlap_count = 0;
 
-for (const pair of pairs) {
-  const [left_start, left_end] = pair[0].split("-").map((x) => parseInt(x));
-  const [right_start, right_end] = pair[1].split("-").map((x) => parseInt(x));
+for (let line of lines) {
+  let pair = line.split(",");
+  let left_start = parseInt(pair[0].split("-")[0], 10);
+  let left_end = parseInt(pair[0].split("-")[1], 10);
+  let right_start = parseInt(pair[1].split("-")[0], 10);
+  let right_end = parseInt(pair[1].split("-")[1], 10);
 
   if (left_start <= right_end && right_start <= left_end) overlap_count++;
 }
