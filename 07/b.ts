@@ -11,8 +11,6 @@ const input = await Deno.readTextFile(
 const lines = input.split("\n");
 console.log(lines);
 
-let smallDirectoryCount = 0;
-
 type directory = {
   size: number;
   name: string;
@@ -90,12 +88,4 @@ for (const val of dirSizes) {
   }
 }
 
-// for (const key in directories) {
-//   const dir = directories[key];
-//   if (dir.size <= 100000) {
-//     smallDirectoryCount += dir.size;
-//   }
-// }
-
 console.log(directories);
-// 2195372
